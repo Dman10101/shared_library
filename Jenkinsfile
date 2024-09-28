@@ -1,5 +1,10 @@
 // Load the shared library
-@Library('my-shared-library') _
+library(
+    identifier: 'my-shared-library@main',
+    retriever: modernSCM(
+        [$class: 'GitSCMSource', remote: 'https://github.com/Dman10101/shared-library.git']
+    )
+)
 
 pipeline {
     agent any
